@@ -24,7 +24,7 @@ int MMAVReader::Open(const char *path)
     if (imp->ctx == nullptr)
         return -1;
 
-    int ret = avformat_open_input(&imp->ctx, "", nullptr, nullptr);
+    int ret = avformat_open_input(&imp->ctx, path, nullptr, nullptr);
 
     // 返回0即是成功
     if (!ret)

@@ -63,10 +63,17 @@
 int main()
 {
     MMAVReader reader;
-    int ret = reader.Open("/Users/nnhu/Movies/3debf531162aab331805b0899b5babcb.mp4");
+    // int ret = reader.Open("/Users/nnhu/Movies/3debf531162aab331805b0899b5babcb.mp4");
+    int ret = reader.Open("/Users/nnhu/Movies/2024-08-27-14-57-44.mp4");
     printf("ret: %d\n", ret);
+    if (ret)
+        return 0;
+
+    int count = 0;
+
     while (1)
     {
+        count++;
         MMAVPacket packet;
         ret = reader.Read(&packet);
         if (ret)
@@ -75,8 +82,10 @@ int main()
             break;
         }
 
-        printf("Read Packet Success\n");
+        // printf("Read Packet Success\n");
     }
+
+    printf("count: %d\n", count);
 
     reader.Close();
     return 0;

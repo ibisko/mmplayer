@@ -15,13 +15,13 @@ add_executable(
 # 链接
 target_link_libraries(mmplayer mmThread)
 target_link_libraries(mmplayer mmav)
-target_link_libraries(mmplayer libavcodec)
-target_link_libraries(mmplayer libavdevice)
-target_link_libraries(mmplayer libavfilter)
-target_link_libraries(mmplayer libavformat)
-target_link_libraries(mmplayer libavutil)
-target_link_libraries(mmplayer libswresample)
-target_link_libraries(mmplayer libswscale)
+target_link_libraries(mmplayer avcodec)
+target_link_libraries(mmplayer avdevice)
+target_link_libraries(mmplayer avfilter)
+target_link_libraries(mmplayer avformat)
+target_link_libraries(mmplayer avutil)
+target_link_libraries(mmplayer swresample)
+target_link_libraries(mmplayer swscale)
 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
